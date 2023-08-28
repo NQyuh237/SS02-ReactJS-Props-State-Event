@@ -1,0 +1,120 @@
+import React, { Component } from "react";
+
+export default class FromAddStudents extends Component {
+  constructor(props) {
+    super(props);
+  }
+  turnOff = () => {
+    this.props.turnOffForm();
+  };
+  render() {
+    return (
+      <>
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex={-1}
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  Thêm mới sinh viên
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  onClick={this.turnOff}
+                />
+              </div>
+              <div className="modal-body">
+                <form>
+                  <div className="mb-2">
+                    <label htmlFor="studentCode" className="form-label">
+                      Mã sinh viên
+                    </label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="studentCode"
+                    />
+                    <div className="text-danger">
+                      Mã sinh viên không được để trống.
+                    </div>
+                  </div>
+                  <div className="mb-2">
+                    <label htmlFor="studentName" className="form-label">
+                      Tên sinh viên
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="studentName"
+                    />
+                    <div className="text-danger">
+                      Mã sinh viên không được để trống.
+                    </div>
+                  </div>
+                  <div className="mb-2">
+                    <label htmlFor="dateOfBirth" className="form-label">
+                      Ngày sinh
+                    </label>
+                    <input
+                      type="date"
+                      className="form-control"
+                      id="dateOfBirth"
+                    />
+                    <div className="text-danger">
+                      Ngày sinh không được để trống.
+                    </div>
+                  </div>
+                  <div className="mb-2">
+                    <label htmlFor="address" className="form-label">
+                      Địa chỉ
+                    </label>
+                    <input type="text" className="form-control" id="address" />
+                  </div>
+                  <div className="mb-2">
+                    <label htmlFor="email" className="form-label">
+                      Email
+                    </label>
+                    <input type="email" className="form-control" id="email" />
+                    <div className="text-danger">Email được để trống.</div>
+                  </div>
+                  <div className="mb-2">
+                    <label htmlFor="password" className="form-label">
+                      Mật khẩu
+                    </label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="password"
+                    />
+                    <div className="text-danger">Mật khẩu được để trống.</div>
+                  </div>
+                  <div className="d-flex justify-content-end gap-3">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                      onClick={this.turnOff}
+                    >
+                      Hủy
+                    </button>
+                    <button type="button" className="btn btn-primary">
+                      Lưu
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
